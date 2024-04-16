@@ -1158,7 +1158,7 @@ E37A 3506             (        forth.asm):00757 (4+2)           puls    d
 E37C 2501             (        forth.asm):00758 (3)             blo     @inpovf
 E37E 39               (        forth.asm):00759 (4)             rts
 E37F C612             (        forth.asm):00760 (2)     @inpovf ldb     #18             >IN Out of range
-E381 BDE74C           (        forth.asm):00761 (7)             jsr     ERRHDLR
+E381 BDE74C           (        forth.asm):00761 (7)             jsr     ERRHDLR         No return
                       (        forth.asm):00762         
                       (        forth.asm):00763         * Scan for the next non-space character pointed to by X.
                       (        forth.asm):00764         * Return with ZFLAG set if an end of input stream condition is recognized,
@@ -3763,7 +3763,7 @@ F301 BDE397           (        forth.asm):03049 (7)             jsr     SCNETOK
 F304 1F10             (        forth.asm):03050 (4)             tfr     x,d             TOKENEP
 F306 7EE161           (        forth.asm):03051 (3)             jmp     U2INFRD         Derive >IN from D
 F309 C60D             (        forth.asm):03052 (2)     @chrerr ldb     #13             Illegal argument
-F30B BDE74C           (        forth.asm):03053 (7)             jsr     ERRHDLR
+F30B BDE74C           (        forth.asm):03053 (7)             jsr     ERRHDLR         No return
                       (        forth.asm):03054         * No return.
                       (        forth.asm):03055         
                       (        forth.asm):03056         * Hairy code but working.
@@ -5477,7 +5477,7 @@ FE2F 5A3739466F727468 (        forth.asm):04759                 fcc     'Z79Fort
      6D
                       (        forth.asm):04760                 ENDC                    RTCFEAT
 FE50 0D0A             (        forth.asm):04761                 fcb     CR,LF
-FE52 3230323430323138 (        forth.asm):04762                 fcc     '20240218 (C) Francois Laagel 2019'
+FE52 3230323430343136 (        forth.asm):04762                 fcc     '20240416 (C) Francois Laagel 2019'
      2028432920467261
      6E636F6973204C61
      6167656C20323031

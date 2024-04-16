@@ -758,7 +758,7 @@ ISERCHD	pshs	d
 	blo	@inpovf
 	rts
 @inpovf	ldb	#18		>IN Out of range
-	jsr	ERRHDLR
+	jsr	ERRHDLR		No return
 
 * Scan for the next non-space character pointed to by X.
 * Return with ZFLAG set if an end of input stream condition is recognized,
@@ -3050,7 +3050,7 @@ CHAR	fcb	4		ANSI (Core)
 	tfr	x,d		TOKENEP
 	jmp	U2INFRD		Derive >IN from D
 @chrerr	ldb	#13		Illegal argument
-	jsr	ERRHDLR
+	jsr	ERRHDLR		No return
 * No return.
 
 * Hairy code but working.
@@ -4759,7 +4759,7 @@ BOOTMSG	fcb	CR,LF
 	fcc	'Z79Forth/AI 6309 ANS Forth System'
 	ENDC			RTCFEAT
 	fcb	CR,LF
-	fcc	'20240218 (C) Francois Laagel 2019'
+	fcc	'20240416 (C) Francois Laagel 2019'
 	fcb	CR,LF,CR,LF,NUL
 
 RAMOKM	fcc	'RAM OK: 32 KB'

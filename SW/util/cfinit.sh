@@ -74,7 +74,7 @@ fi
 #   473 526 THRU              \ Core ext set test
 #   527 567 THRU              \ Block word set test
 #   568 601 THRU              \ Double word set test
-#   602 627 THRU              \ Double word set test
+#   602 627 THRU              \ String word set test
 # ;
 
 ./txt2blk -i ../examples/tetris.4th -d $CFDEV -s 650 \
@@ -92,4 +92,22 @@ fi
 ./txt2blk -i ../examples/ansiextern.4th -d $CFDEV -s 1000 \
 -h "\ ANSI non-EEPROM resident words. FLA Sep 10, 2022."
 # : ansiload 1000 1011 THRU ;
+
+~/projects/HD63C09/REL-ANS94/util/txt2blk \
+-i ~/src/pacman/AI/pacman.4th \
+-d $CFDEV -s 2000 \
+-h "\ Pacman for the VT420. Francois Laagel, Jan 6, 2024."
+# : pm420 2000 2159 THRU ;
+
+~/projects/HD63C09/REL-ANS94/util/txt2blk \
+-i ~/src/pacman/AI/vt340/pacman.4th \
+-d $CFDEV -s 2200 \
+-h "\ Pacman for the VT340. Francois Laagel, Jan 6, 2024."
+# : pm340 2200 2362 THRU ;
+
+~/projects/HD63C09/REL-ANS94/util/txt2blk \
+-i ~/src/pacman/AI/vt340/pacman-color.4th \
+-d $CFDEV -s 2400 \
+-h "\ Pacman for the VT340c. Francois Laagel, Jan 6, 2024."
+# : pm340c 2400 2567 THRU ;
 
