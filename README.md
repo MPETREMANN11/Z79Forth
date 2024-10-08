@@ -246,3 +246,4 @@ be added to the examples documentation.
 
 [The Z79Forth Blog](https://z79forth.blogspot.com/)
 
+[FORTH code analyzer](https://analyzer.arduino-forth.com/)
