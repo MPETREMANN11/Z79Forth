@@ -1,6 +1,6 @@
 # Z79Forth
 
-![An Early Hardware Iteration](KIMG0091.jpg "The Wire Wrapped Prototype Board")
+![An Early Hardware Iteration](Z79FORTH_3D.jpg "The Wire Wrapped Prototype Board")
 
 ## Overview ##
 This project has a hardware component and a software component.
