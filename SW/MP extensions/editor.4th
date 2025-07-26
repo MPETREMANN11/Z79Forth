@@ -2,24 +2,27 @@
 \ FORTH minimal block editor
 \    Filename:      editor.4th
 \    Date:          21 jul. 2025
-\    Modified:      24 jul. 2025
+\    Modified:      26 jul. 2025
 \    File Version:  1.0
 \    Copyright:     Marc PETREMANN
 \    Author:        Marc PETREMANN
 \    GNU General Public License
 \ *********************************************************************
 
-16 constant BLOCK_LINES     \ number of lines in block
-64 constant LINE_LENGTH     \ line length in a block
+
+1024 CONSTANT B/SCR         \ Define size of a block in bytes
+  64 CONSTANT C/L           \ line length in a block
+B/SCR C/L /
+     CONSTANT L/BLOCK       \ number of lines in block
 
 \ get addr from line number n in range [0..15]
 : @line  ( n -- addr ) 
-    LINE_LENGTH * scr @ block + 
+    C/L * scr @ block + 
   ;
 
 \ display content of line n in current block
 : .line  ( n -- )
-    @line LINE_LENGTH type
+    @line C/L type
   ;
 
 \ display text "BLK # : nnnn"   where nnnn is block number
@@ -33,7 +36,7 @@
 \ list the content of current block
 : l  ( -- )
     .blk#
-    BLOCK_LINES 0 do
+    L/BLOCK 0 do
         cr i 2 .r space 
         [char] | emit space 
         i .line
@@ -53,7 +56,7 @@
 
 \ erase content of line n
 : e  ( n -- )
-    @line LINE_LENGTH bl fill  l
+    @line C/L bl fill  l
   ;
 
 \ replace content of line n in current block with str
